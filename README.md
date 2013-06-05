@@ -33,33 +33,32 @@ void setup(){
    //to let it advance
 servoLeft.write(30);
 servoRight.write(150);
- //  int i = 0;
-  // val = 0;
-   //collect the values of the sensor 4 times and calculate the average
-  // for(i=0;i <=3;i++){
-    // val  = val + analogRead(sensorPin);
-  // }
-   //if the sensor detect an obstacle in front
-   //if(val/4 > 300){
-     //      analogWrite(motor1Pin,220);
-      //analogWrite(motor2Pin,90);
-      //     int i =0;
-      //for(i=0;i<=5;i++){
-      //digitalWrite(ledPin,HIGH);
-      //delay(100);
-      //digitalWrite(ledPin,LOW);
-      //delay(50);
-   // }
+  int i = 0;
+   val = 0;
+   collect the values of the sensor 4 times and calculate the average
+  for(i=0;i <=3;i++){
+     val  = val + analogRead(sensorPin);
+   }
+   if the sensor detect an obstacle in front
+   if(val/4 > 300){
+         analogWrite(motor1Pin,220);
+      analogWrite(motor2Pin,90);
+          int i =0;
+     for(i=0;i<=5;i++){
+     digitalWrite(ledPin,HIGH);
+      delay(100);
+      digitalWrite(ledPin,LOW);
+      delay(50);
+    }
      //advance in an opposite direction for 1 second
 
-   //   delay(1000);
+     delay(1000);
      //turning for 1.5 seconds
-     // analogWrite(motor1Pin,0);
-      //analogWrite(motor2Pin,90);
+    bbanalogWrite(motor1Pin,0);
+      analogWrite(motor2Pin,90);
 
-     // delay(1500);
-     
-   // }
+     delay(1500);
+  }
     delay(500);
    }
       else{
@@ -85,6 +84,6 @@ servoRight.write(150);
      
    
     //present the average value in the serial port
-//   Serial.println(val/4);
+   Serial.println(val/4);
    
  }
